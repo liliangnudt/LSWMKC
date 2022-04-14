@@ -8,7 +8,7 @@ flag = 1;
 
 [num,num,numker] = size(KH); 
 
-omega = ones(numker,1)/numker; %initial kernel weights
+omega = sqrt(ones(numker,1)/numker); %initial kernel weights
 avgKer = mycombFun(KH,omega);
 Kstarold = avgKer;             %initial K* = average kernel
 alpha_initial = 0;             %initial alpha = 0
