@@ -29,16 +29,16 @@ for alpha_indx = 1:length(alpha_range)
     Kstar = kcenter(Kstar);
     Kstar = knorm(Kstar);
     [H, ~] = eigs(Kstar, numclass, 'la');
-    [res_mean(:,alpha_indx)] = myNMIACCV2(H,Y,numclass);
+    [res(:,alpha_indx)] = myNMIACCV2(H,Y,numclass);
     
     fprintf('ACC:%4.4f \t NMI:%4.4f \t Pur:%4.4f \t Rand:%4.4f \n',...
-        [ res_mean(1,alpha_indx),res_mean(2,alpha_indx),res_mean(3,alpha_indx),res_mean(4,alpha_indx) ]);
+        [ res(1,alpha_indx),res(2,alpha_indx),res(3,alpha_indx),res(4,alpha_indx) ]);
 end
 %%
-[~,max_indx] = max(res_mean(1,:,:),[],'all','linear'); %max_ACC
-res_mean_opt = res_mean(:,max_indx);
+[~,max_indx] = max(res(1,:,:),[],'all','linear'); %max_ACC
+res_opt = res(:,max_indx);
 
 fprintf('ACC_max:%4.4f \t NMI_max:%4.4f \t Pur_max:%4.4f \t Rand_max:%4.4f \t indx:%4.0f \n',...
-    [ res_mean(1,max_indx) res_mean(2,max_indx) res_mean(3,max_indx) res_mean(4,max_indx) max_indx]);
+    [ res(1,max_indx) res(2,max_indx) res(3,max_indx) res(4,max_indx) max_indx]);
 
 
