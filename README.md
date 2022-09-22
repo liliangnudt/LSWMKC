@@ -1,1 +1,1 @@
-# LSWMKC
+# L. Li et al., "Local Sample-Weighted Multiple Kernel Clustering With Consensus Discriminative Graph," in IEEE Transactions on Neural Networks and Learning Systems, 2022, doi: 10.1109/TNNLS.2022.3184970.
